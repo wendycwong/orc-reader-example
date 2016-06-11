@@ -16,7 +16,7 @@ public class WendyOrc {
         Path p = new Path(fName);
         Reader rdr = OrcFile.createReader(fs, p);
 
-        CompressionKind ckind = rdr.getCompression();
+        CompressionKind ckind = rdr.getCompression(); 
         int csze = rdr.getCompressionSize();
 
         List<org.apache.hadoop.hive.ql.io.orc.OrcProto.Type> ftypes = rdr.getTypes();
