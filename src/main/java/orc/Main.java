@@ -12,12 +12,15 @@ public class Main {
     FileSystem fs = new LocalFileSystem();
     Configuration mainConf = new Configuration();
     fs.initialize(new URI("file://localhost"), mainConf);
-    String fileName = "/Users/tomk/0xdata/ws/orcreader/smalldata/parser/orc/float_single_col.orc";
+    String fileName = "/Users/wendycwong/orc-reader-example/smalldata/parser/orc/float_single_col.orc";
 
-    MyOrc m = new MyOrc();
-    long rowCount = m.getRowCount(fs, fileName);
+//    MyOrc m = new MyOrc();
+//    long rowCount = m.getRowCount(fs, fileName);
 
-    System.out.println("rowCount is " + rowCount);
+    WendyOrc wm = new WendyOrc();
+    long rowCountw = wm.getRowCount(fs, fileName);
+
+    System.out.println("rowCount is " + rowCountw);
   }
 }
 
