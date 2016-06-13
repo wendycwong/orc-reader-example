@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.hydromatic:quidem:0.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.hydromatic/quidem/0.1.1/535e2fd48db7458f4653e0f97d1a68f4b0c1c39a/quidem-0.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.hydromatic/quidem/0.1.1/d2a83f402d391d527c7ced33a17ac446f272272b/quidem-0.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
