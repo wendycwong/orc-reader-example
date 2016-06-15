@@ -12,7 +12,8 @@ public class Main2 {
         FileSystem fs = new LocalFileSystem();
         Configuration mainConf = new Configuration();
         fs.initialize(new URI("file://localhost"), mainConf);
-        String fileName = "/Users/wendycwong/orc-reader-example/smalldata/parser/orc/float_single_col.orc";
+//        String fileName = "/Users/wendycwong/orc-reader-example/smalldata/parser/orc/demo-11-zlib.orc";
+        String fileName = "/tmp/test.orc";
 
 //    MyOrc m = new MyOrc();
 //    long rowCount = m.getRowCount(fs, fileName);

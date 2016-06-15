@@ -15,9 +15,8 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.hive.ql.io.orc.Writer;
-
-//import org.apache.crunch.types.orc.OrcUtils;
-import org.apache.crunch;
+import org.apache.crunch.types.orc.OrcUtils;
+//import org.apache.crunch;
 
 import java.io.IOException;
 
@@ -30,11 +29,11 @@ public class OrcWriter {
     }
 
     public void createOrcFile(String input) throws IOException {
-        String typeStr = "struct";
+        String typeStr = "struct<text_string:string>";
         TypeInfo typeInfo = TypeInfoUtils.getTypeInfoFromTypeString(typeStr);
         ObjectInspector inspector = OrcStruct.createObjectInspector(typeInfo);
 
-        String[] inputTokens = input.split("\\t");
+        String[] inputTokens = input.split("\\t");  // writing each column here.
 
         OrcStruct orcLine = OrcUtils.createOrcStruct(
                 typeInfo,
@@ -44,6 +43,16 @@ public class OrcWriter {
                 new LongWritable(Long.valueOf(inputTokens[3])),
                 new DoubleWritable(Double.valueOf(inputTokens[4])),
                 new FloatWritable(Float.valueOf(inputTokens[5])));
+
+        OrcStruct orcLine2 = OrcUtils.createOrcStruct(
+                typeInfo,
+                new Text(inputTokens[0]),
+                new Text("What"),
+                new Text("Where"),
+                new Text("how"),
+                new Text("When"),
+                new Text("Why"));
+
         Configuration conf = new Configuration();
         Path tempPath = new Path("/tmp/test.orc");
 
